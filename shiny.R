@@ -6,7 +6,7 @@ library(e1071)
 library(plotly)
 
 
-has_covid <- ifelse(temperature > 99 | cough_severity > 4, 1, 0)
+has_covid <- ifelse(age>61 & temperature>97|temperature > 99 | cough_severity > 4, 1, 0)
 
 # Create a dataframe
 covid_data <- data.frame(Age = age, Temperature = temperature, Cough_Severity = cough_severity, Has_COVID = has_covid)
